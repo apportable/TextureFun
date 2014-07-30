@@ -504,10 +504,10 @@
 //		glBufferData(GL_ARRAY_BUFFER, sizeof(_quads[0]) * (n-start), &_quads[start], GL_DYNAMIC_DRAW);
 		
 		// option 3: orphaning + glMapBuffer
-		glBufferData(GL_ARRAY_BUFFER, sizeof(_quads[0]) * (n-start), nil, GL_DYNAMIC_DRAW);
-		void *buf = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-		memcpy(buf, _quads, sizeof(_quads[0])* (n-start));
-		glUnmapBuffer(GL_ARRAY_BUFFER);		
+		glBufferData(GL_ARRAY_BUFFER, sizeof(_quads[0]) * (n-start), _quads, GL_DYNAMIC_DRAW);
+		// void *buf = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+		// memcpy(buf, _quads, sizeof(_quads[0])* (n-start));
+		// glUnmapBuffer(GL_ARRAY_BUFFER);		x
 		
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
